@@ -6,7 +6,7 @@
     <title>Week 6 - Contact Book (APIs)</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="fetchContacts()">
+<body>
     <div class="container">
         <div class="header">
             <h1> Contact Book</h1>
@@ -27,7 +27,7 @@
                     <input type="email" id="apiKeyInput" placeholder="your - email address@example.com">
                 </div>
 
-                <button class="btn" onclick="setupApiKey()">Start using contact book</button>
+                <button class="btn" onclick="setApiKey()">Start using contact book</button>
             </div>
         <!--Main Content-->
         <div id="contactsPage" class="page">
@@ -86,6 +86,8 @@
 
                 <h2>Edit Contact</h2>
 
+                <div id="editAvatarImage" style="text-align: center; margin-bottom: 20px;" ></div>
+
                 <form id="editContactForm" onsubmit="updateContact(event)">
                     <input type="hidden" id="editContactId">
 
@@ -118,9 +120,7 @@
         </div>
     </div>
 
-    <div id="table">Contacts loading...</div>
-    <button id="refresh" type="button">Refresh</button>
-    <button id="addContact" type="button">Add Contact</button>
+
 
     <script src="script.js"></script>
     <script src="config.js"></script>
