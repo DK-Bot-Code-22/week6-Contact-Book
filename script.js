@@ -6,7 +6,7 @@ const rootPath = 'https://mysite.itvarsity.org/api/ContactBook/';
 // Check if APi key exists when page loads
 
 function checkApiKey() { 
-    const storedApiKey = localStorage.getItem(key:'apiKey');
+    const storedApiKey = localStorage.getItem('apiKey');
     if (storedApiKey) {
         apiKey = storedApiKey;
 
