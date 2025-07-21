@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 - Contact Book (APIs)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="fetchContacts()">
+    <div class="container">
+        <div class="header">
+            <h1> Contact Book</h1>
+            <p> Manage your contacts with our simple API powered app. </p>
+        </div>
+
+        <div class="content">
+            <!--API set-up Page-->
+            <div id="setupPage" class="page active">
+                <div class="api-setup">
+                    <h3>API setup required</h3>
+                    <p>Before you use contact book, please enter API key below. if you do not have one you can use:
+                        <strong>appacademy@itvarsity.org</strong>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="apiKeyInput">Enter your API key (email address)</label>
+                    <input type="email" id="apiKeyInput" placeholder="your - email address@example.com">
+                </div>
+
+                <button class="btn" onclick="setupApiKey()">Start using contact book</button>
+            </div>
+            <!--Main Content-->
+          <div id="contactsPage" class="page">
+            <div style="display: flex; justify-content: space-between;
+            align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+
+                <h2>Your Contacts</h2>
+                <div>
+                    <button class="btn btn-secondary" onclick="refreshContacts()">Refresh</button>
+                    <button class="btn btn-success" onclick="showAddContact()"> Add Contact</button>
+                </div>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+
+    <div id="table">Contacts loading...</div>
+    <button id="refresh" type="button">Refresh</button>
+    <button id="addContact" type="button">Add Contact</button>
+
+    <script src="config.js"></script>
+    <script>
+        function fetchContacts(){
+            fetch(rootPath + "controller/get-contacts/")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                //displayOutput(data);
+                console.log(data);
+            })
+        }
+    </script>
+    
+</body>
+</html>
