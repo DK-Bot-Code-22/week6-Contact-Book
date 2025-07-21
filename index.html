@@ -47,7 +47,73 @@
              
              <!---Add Contact Page-->
              <div id="addContactsPage" class="page">
-                
+                <button class="btn btn-secondary back-btn" onclick="showContacts()">Back to Contacts</button>
+
+                <h2>Add New Contact</h2>
+
+                <form id="addContactForm" onsubmit="addContact(event)">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstname" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastname" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="avatar">Profile Picture (Optional):</label>
+                        <input type="file" id="avatar" name="avatar" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Save Contact</button>
+                    <button type="button" class="btn btn-secondary" onclick="showContacts()">Cancel</button>
+
+                </form>
+             </div>
+
+        <!--Edit Contact Page-->
+
+             <div id="editContactsPage" class="page">
+                <button class="btn btn-secondary back-btn" onclick="showContacts()">Back to Contacts</button>
+
+                <h2>Edit Contact</h2>
+
+                <form id="editContactForm" onsubmit="updateContact(event)">
+                    <input type="hidden" id="editContactId">
+
+                    <div class="form-group">
+                        <label for="editFirstName">First Name:</label>
+                        <input type="text" id="editFirstName" name="firstname" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="editLastName">Last Name:</label>
+                        <input type="text" id="editLastName" name="lastname" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="editMobile">Mobile Number:</label>
+                        <input type="tel" id="editMobile" name="mobile" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="editEmail">Email Address:</label>
+                        <input type="email" id="editEmail" name="email" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="editAvatar">Profile Picture (Optional):</label>
+                        <input type="file" id="editAvatar" name="avatar" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Update Contact</button>
+                    <button type="button" class="btn btn-secondary" onclick="showContacts()">Cancel</button>
+
+                </form>
              </div>
         </div>
     </div>
